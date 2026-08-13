@@ -1,5 +1,8 @@
-# Crear el archivo rules.md dentro de la carpeta del submódulo 'controlpanel'
-@"
+---
+name: ui-patterns
+description: Estándares de Diseño y Usabilidad para formularios dinámicos, acordeones, autocompletados y visualización de datos en el Control Panel.
+---
+
 # Estándares de Diseño y Usabilidad — CRM Control Panel
 
 Estas reglas describen las decisiones de UI/UX estándar que deben aplicarse a todos los módulos, formularios y componentes interactivos creados para el Control Panel.
@@ -19,11 +22,11 @@ Estas reglas describen las decisiones de UI/UX estándar que deben aplicarse a t
 
 - **Botones de Acción Destructiva Flotantes:**
   Los botones de eliminación global para tarjetas o secciones grandes deben ubicarse en la **esquina superior derecha** de la tarjeta (`absolute top-4 right-4`).
-  Se utiliza el botón circular tipo icono con el símbolo de basurero (`delete`) y la acción destructiva controlada `HoldToConfirmButton` (retardo de confirmación de 2 segundos mediante presión continua).
+  Se utiliza el botón circular tipo icono con el símbolo de basurero (`delete`) y la acción destructiva controlada `HoldToConfirmButton` (ver especificación y comportamiento en la biblioteca de componentes).
 
 ## 2. Autocompletados Híbridos (Inputs Autocompletables)
 
-- **Tecnología Datatalist:**
+- **Tecnología Datalist:**
   Utiliza elementos estándar **HTML5 <datalist>** enlazados mediante el atributo `list` en los inputs de texto para permitir sugerencias rápidas (como el régimen hotelero, momentos de actividades o categorías) sin bloquear la escritura libre de valores personalizados.
 
 ## 3. Acordeones Colapsables Inteligentes
@@ -37,4 +40,3 @@ Estas reglas describen las decisiones de UI/UX estándar que deben aplicarse a t
 
 - **Píldoras de Ubicación/Metadatos:**
   La visualización de registros dinámicos y agrupados en la tabla principal debe utilizar píldoras compactas (`chip`) con formato jerárquico que destaquen primero el contenedor principal en negrita y a continuación los sub-elementos entre paréntesis (ej: **Egipto** (El Cairo, Luxor)).
-"@ | Out-File -FilePath "controlpanel\rules.md" -Encoding utf8

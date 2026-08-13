@@ -1,3 +1,8 @@
+---
+name: component-refactoring
+description: Reglas y protocolo paso a paso para la descomposición y refactorización de componentes de React monolíticos o complejos.
+---
+
 # Skill: React Component Decomposition & Refactoring
 
 ## Objective

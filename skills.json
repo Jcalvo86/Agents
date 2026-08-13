@@ -1,0 +1,19 @@
+{
+  "entries": [
+    {
+      "path": "SuenoTravel/icon-sheet-architect"
+    },
+    {
+      "path": "SuenoTravel/map-prompt-architect"
+    },
+    {
+      "path": "SuenoTravel/travel-data-generator"
+    },
+    {
+      "path": "components_library"
+    },
+    {
+      "path": "Alexandria/glossary-term-generator"
+    }
+  ]
+}

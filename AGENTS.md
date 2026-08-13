@@ -1,3 +1,8 @@
+---
+author: Javier Calvo
+date: 2026-08-13
+---
+
 # Estándares de Diseño y Comportamiento de Filtros en Alexandria
 
 Cualquier agente que trabaje en esta base de código debe seguir estas convenciones para mantener la coherencia de la experiencia de usuario (UX):
@@ -74,14 +79,31 @@ Inspect the user prompt and file target to auto-load modules **only on demand**:
 | Writing DB queries, Supabase actions, or migrations | ➔ Read `.agents/skills/supabase-crud.md` | `supabase/`, `src/lib/` |
 | Building, testing, linting, or executing CLI commands | ➔ Read `.agents/ANTIGRAVITY.md` | Root / Terminal |
 | Reviewing or recording system architecture shifts | ➔ Read/Write `.agents/decisions/` | `.agents/decisions/` |
-| Building or editing Dashboard / Control Panel layouts, tables, or forms | ➔ Read `.agents/skills/layout-control-panel.md` | `src/app/dashboard/`, `src/components/` |
-| Defining brand colors, themes, or status badges | ➔ Read `.agents/DESIGN.md` | Global |
+| Building or editing Dashboard / Control Panel layouts, tables, or forms | ➔ Read `.agents/skills/layout-control-panel.md` y `.agents/skills/ui-patterns.md` | `src/app/dashboard/`, `src/components/` |
+| Building or editing landing pages or public web views | ➔ Read `.agents/skills/layout-landingPage_PublicWeb.md` | `src/app/public/`, `src/components/` |
+| Implementing file uploads or hold-to-confirm buttons | ➔ Read `.agents/components_library/SKILL.md` (y sus referencias) | `src/components/` |
+| Generating retro maps, icon sheets, or travel JSON data | ➔ Read `.agents/SuenoTravel/` (relevant skill) | `src/data/`, `src/prompts/` |
+| Generating new glossary terms or tech concepts | ➔ Read `.agents/Alexandria/glossary-term-generator` | `src/data/` |
 
 ## 6. Skills Quick-Index Library
 
+### Global Skills (`.agents/skills/`)
 - `component-refactoring.md`: Rules for decomposing large files (>150 LOC) into custom hooks and atomic sub-components.
+- `ui-patterns.md`: Guidelines for forms, autocompletes, accordions, and tables in the Control Panel.
 - `supabase-crud.md`: Safe SSR data fetching, Zod schema validations, and RLS policy setup.
-- `DESIGN.md`: Color tokens, typography scales, card layouts, and status pill badges for AntEater UI.
+- `layout-control-panel.md`: Layout architecture, grids, spatial density standards for Control Panels.
+- `layout-landingPage_PublicWeb.md`: Design principles, margins, grids, and CTA sizing for Public Web / Landings.
+
+### Reusable UI Components (`.agents/components_library/`)
+- `components_library/SKILL.md`: Reference index for premium reusable components (`ImageUploader`, `HoldToConfirmButton`).
+
+### Project-Specific Skills
+*   **Sueño Travel (`.agents/SuenoTravel/`)**:
+    - `travel-data-generator`: Strictly formats region and location JSON files.
+    - `map-prompt-architect`: Midjourney/Flux prompts for vintage map backgrounds.
+    - `icon-sheet-architect`: Asset sheet prompts for isolated architectural landmark icons.
+*   **Alexandria (`.agents/Alexandria/`)**:
+    - `glossary-term-generator`: Tech glossary terms and schema compiler for product/non-tech profiles.
 
 ## 7. Task Completion Protocol (Definition of Done)
 
