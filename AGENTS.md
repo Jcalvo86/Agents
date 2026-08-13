@@ -44,7 +44,7 @@ Cualquier agente que trabaje en esta base de código debe seguir estas convencio
 
 | Agent Role | Primary Responsibility | Allowed Paths | Context Specs |
 | :--- | :--- | :--- | :--- |
-| `@ui-agent` | Layouts, UI Components, Tailwind, Design System | `src/app/`, `src/components/`, `public/` | Read `.agents/DESIGN.md`, `.agents/skills/rules.md` |
+| `@ui-agent` | Layouts, UI Components, Tailwind, Design System | `src/app/`, `src/components/`, `public/` | Read `.agents/skills/design-foundations.md`, active project `DESIGN.md`, `.agents/skills/ui-patterns.md` |
 | `@db-agent` | Schemas, Migrations, API Routes, RLS Policies | `supabase/`, `src/lib/`, `src/app/api/` | Read `.agents/skills/supabase-crud.md` |
 | `@qa-agent` | Linting, Type Checking, E2E & Unit Tests | `tests/`, `*.test.ts`, `*.config.*` | Read `.agents/ANTIGRAVITY.md` |
 
@@ -79,6 +79,8 @@ Inspect the user prompt and file target to auto-load modules **only on demand**:
 | Writing DB queries, Supabase actions, or migrations | ➔ Read `.agents/skills/supabase-crud.md` | `supabase/`, `src/lib/` |
 | Building, testing, linting, or executing CLI commands | ➔ Read `.agents/ANTIGRAVITY.md` | Root / Terminal |
 | Reviewing or recording system architecture shifts | ➔ Read/Write `.agents/decisions/` | `.agents/decisions/` |
+| Sizing, animations, grids, spacing, or icon hitboxes | ➔ Read `.agents/skills/design-foundations.md` | Global / UI |
+| Applying brand colors, typography, or style tokens | ➔ Read `<active-project>/DESIGN.md` | Global / Brand |
 | Building or editing Dashboard / Control Panel layouts, tables, or forms | ➔ Read `.agents/skills/layout-control-panel.md` y `.agents/skills/ui-patterns.md` | `src/app/dashboard/`, `src/components/` |
 | Building or editing landing pages or public web views | ➔ Read `.agents/skills/layout-landingPage_PublicWeb.md` | `src/app/public/`, `src/components/` |
 | Implementing file uploads or hold-to-confirm buttons | ➔ Read `.agents/components_library/SKILL.md` (y sus referencias) | `src/components/` |
@@ -88,6 +90,7 @@ Inspect the user prompt and file target to auto-load modules **only on demand**:
 ## 6. Skills Quick-Index Library
 
 ### Global Skills (`.agents/skills/`)
+- `design-foundations.md`: Cimientos globales de diseño creados por Tomas Bravo (escala de animación, rejilla base-4, tamaño mínimo de hitboxes).
 - `component-refactoring.md`: Rules for decomposing large files (>150 LOC) into custom hooks and atomic sub-components.
 - `ui-patterns.md`: Guidelines for forms, autocompletes, accordions, and tables in the Control Panel.
 - `supabase-crud.md`: Safe SSR data fetching, Zod schema validations, and RLS policy setup.
@@ -113,5 +116,5 @@ Before marking any task as resolved, every agent MUST execute this checklist:
 2. **Verify Formatting:** Ensure zero ESLint warnings on modified files.
 3. **Audit File Sizes:** Verify no newly created/edited file exceeds 150 LOC.
 4. **Audit Context Drift:**
-   - Did you add/modify UI tokens or component guidelines? ➔ Update `.agents/DESIGN.md`.
+   - Did you add/modify UI tokens or component guidelines? ➔ Update global `design-foundations.md` or active project `DESIGN.md`.
    - Did you change an architectural decision or schema convention? ➔ Append a 5-line summary ADR in `.agents/decisions/`.
