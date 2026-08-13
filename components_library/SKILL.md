@@ -16,6 +16,9 @@ Esta es la biblioteca de referencia de componentes de interfaz que ya existen en
 2. **[HoldToConfirmButton](file:///C:/andreia/Web-sueno-travel/.agents/skills/components_library/references/HoldToConfirmButton.md)**:
    Botón interactivo de confirmación por retención para acciones críticas (como borrados). Requiere mantener presionado durante 1.5 segundos mostrando animación circular de carga.
 
+3. **[PasswordStrengthInput](file:///c:/andreia/Web-sueno-travel/.agents/components_library/references/PasswordStrengthInput.md)**:
+   Campo de entrada de contraseña interactivo con visualizador de robustez de 4 niveles y validación interactiva de requisitos en tiempo real.
+
 ---
 
 ## Directrices para el Agente
