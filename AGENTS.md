@@ -75,6 +75,7 @@ Inspect the user prompt and file target to auto-load modules **only on demand**:
 
 | Condition / Symptom | Action / Required Skill | Scope |
 | :--- | :--- | :--- |
+| Starting a new session, onboarding or setting up workspace tools | ➔ Read `.agents/skills/environment-setup.md` | Global / Workspace |
 | Target file is > 150 LOC or JSX is overly complex | ➔ ALWAYS read `.agents/skills/component-refactoring.md` | `src/components/` |
 | Writing DB queries, Supabase actions, or migrations | ➔ Read `.agents/skills/supabase-crud.md` | `supabase/`, `src/lib/` |
 | Building, testing, linting, or executing CLI commands | ➔ Read `.agents/ANTIGRAVITY.md` | Root / Terminal |
@@ -90,6 +91,7 @@ Inspect the user prompt and file target to auto-load modules **only on demand**:
 ## 6. Skills Quick-Index Library
 
 ### Global Skills (`.agents/skills/`)
+- `environment-setup.md`: Protocolo de inicio del ambiente de trabajo (Agentation, submódulos de Git e integración visual).
 - `design-foundations.md`: Cimientos globales de diseño creados por Tomas Bravo (escala de animación, rejilla base-4, tamaño mínimo de hitboxes).
 - `component-refactoring.md`: Rules for decomposing large files (>150 LOC) into custom hooks and atomic sub-components.
 - `ui-patterns.md`: Guidelines for forms, autocompletes, accordions, and tables in the Control Panel.
