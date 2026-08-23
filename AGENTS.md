@@ -57,6 +57,9 @@ Cualquier agente que trabaje en esta base de código debe seguir estas convencio
 - **NEVER:** Hardcode inline styles or use arbitrary Tailwind values (e.g., `w-[234px]`).
 - **NEVER:** Import `@supabase/supabase-js` directly in UI components; use SSR client wrapper `@/lib/supabase/client`.
 
+### Component Reuse & Standardization
+- **NEVER re-code styles for library components:** Reusable UI components from `.agents/components_library/SKILL.md` (e.g., `HoldToConfirmButton`) must define and encapsulate their visual styles internally. When utilizing them, agents MUST use the component's internal design configuration or variant props (configured to match the active project's `DESIGN.md` guidelines) and **NEVER** apply custom Tailwind classes or raw inline CSS classes in the parent view to redefine their appearance.
+
 ### Component & File Constraints
 - **MAX COMPONENT SIZE:** No component or file in `src/` should exceed **150-200 lines of code**.
 - **DECOMPOSITION RULE:** If a component reaches >150 lines, STOP writing feature code immediately and trigger the Refactoring Skill (`.agents/skills/component-refactoring.md`).
