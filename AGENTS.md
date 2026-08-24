@@ -31,6 +31,13 @@ Cualquier agente que trabaje en esta base de código debe seguir estas convencio
 ## 3. Convención de Nomenclatura del Panel de Control
 * **Uso del término "Concepto" (Concept):** En lugar de utilizar términos genéricos o ambiguos como "Entrada" (Entry), se debe emplear de manera consistente el término **"Concepto"** (y **"Conceptos"** para el plural) en todos los títulos, botones, pestañas y mensajes del panel de control. Esto proporciona una mejor semántica del contenido que se cataloga (metodologías, guías, herramientas, frameworks, reglas, etc.) diferenciándolo claramente de otros módulos como el "UI Kit".
 
+## 4. Indicador de Creador (Creator Indicator)
+* **Visualización de la Autoría:** Para mantener un control óptimo de "Human-in-the-Loop", cualquier elemento creado dinámicamente en el sistema (ej. componentes, entregables, paquetes de trabajo o actividades) debe ir acompañado del componente `CreatorIndicator`.
+* **Especificaciones del Indicador:**
+  * **Humano:** Mostrar un avatar circular con fondo de color generado consistentemente según sus iniciales (derivado de su nombre o prefijo de email antes de `@`), a menos que se provea una imagen de perfil.
+  * **IA (Inteligencia Artificial):** Mostrar una píldora con fondo degradado púrpura/índigo, un icono de estrellas de 4 puntas (`Sparkles` o robot `Bot`) y el texto "IA".
+  * **Preconfiguración:** Mostrar una píldora azul/cyan con el icono de un rompecabezas/puzzle (`Puzzle`) y el nombre de la plantilla.
+
 ---
 
 # Agent Context & System Router (CRM Control Panel)
@@ -57,6 +64,9 @@ Cualquier agente que trabaje en esta base de código debe seguir estas convencio
 - **NEVER:** Hardcode inline styles or use arbitrary Tailwind values (e.g., `w-[234px]`).
 - **NEVER:** Import `@supabase/supabase-js` directly in UI components; use SSR client wrapper `@/lib/supabase/client`.
 
+### Component Reuse & Standardization
+- **NEVER re-code styles for library components:** Reusable UI components from `.agents/components_library/SKILL.md` (e.g., `HoldToConfirmButton`) must define and encapsulate their visual styles internally. When utilizing them, agents MUST use the component's internal design configuration or variant props (configured to match the active project's `DESIGN.md` guidelines) and **NEVER** apply custom Tailwind classes or raw inline CSS classes in the parent view to redefine their appearance.
+
 ### Component & File Constraints
 - **MAX COMPONENT SIZE:** No component or file in `src/` should exceed **150-200 lines of code**.
 - **DECOMPOSITION RULE:** If a component reaches >150 lines, STOP writing feature code immediately and trigger the Refactoring Skill (`.agents/skills/component-refactoring.md`).
@@ -75,6 +85,7 @@ Inspect the user prompt and file target to auto-load modules **only on demand**:
 
 | Condition / Symptom | Action / Required Skill | Scope |
 | :--- | :--- | :--- |
+| Starting a new session, onboarding or setting up workspace tools | ➔ Read `.agents/skills/environment-setup.md` | Global / Workspace |
 | Target file is > 150 LOC or JSX is overly complex | ➔ ALWAYS read `.agents/skills/component-refactoring.md` | `src/components/` |
 | Writing DB queries, Supabase actions, or migrations | ➔ Read `.agents/skills/supabase-crud.md` | `supabase/`, `src/lib/` |
 | Building, testing, linting, or executing CLI commands | ➔ Read `.agents/ANTIGRAVITY.md` | Root / Terminal |
@@ -90,6 +101,7 @@ Inspect the user prompt and file target to auto-load modules **only on demand**:
 ## 6. Skills Quick-Index Library
 
 ### Global Skills (`.agents/skills/`)
+- `environment-setup.md`: Protocolo de inicio del ambiente de trabajo (Agentation, submódulos de Git e integración visual).
 - `design-foundations.md`: Cimientos globales de diseño creados por Tomas Bravo (escala de animación, rejilla base-4, tamaño mínimo de hitboxes).
 - `component-refactoring.md`: Rules for decomposing large files (>150 LOC) into custom hooks and atomic sub-components.
 - `ui-patterns.md`: Guidelines for forms, autocompletes, accordions, and tables in the Control Panel.
