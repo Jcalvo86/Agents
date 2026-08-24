@@ -31,6 +31,13 @@ Cualquier agente que trabaje en esta base de código debe seguir estas convencio
 ## 3. Convención de Nomenclatura del Panel de Control
 * **Uso del término "Concepto" (Concept):** En lugar de utilizar términos genéricos o ambiguos como "Entrada" (Entry), se debe emplear de manera consistente el término **"Concepto"** (y **"Conceptos"** para el plural) en todos los títulos, botones, pestañas y mensajes del panel de control. Esto proporciona una mejor semántica del contenido que se cataloga (metodologías, guías, herramientas, frameworks, reglas, etc.) diferenciándolo claramente de otros módulos como el "UI Kit".
 
+## 4. Indicador de Creador (Creator Indicator)
+* **Visualización de la Autoría:** Para mantener un control óptimo de "Human-in-the-Loop", cualquier elemento creado dinámicamente en el sistema (ej. componentes, entregables, paquetes de trabajo o actividades) debe ir acompañado del componente `CreatorIndicator`.
+* **Especificaciones del Indicador:**
+  * **Humano:** Mostrar un avatar circular con fondo de color generado consistentemente según sus iniciales (derivado de su nombre o prefijo de email antes de `@`), a menos que se provea una imagen de perfil.
+  * **IA (Inteligencia Artificial):** Mostrar una píldora con fondo degradado púrpura/índigo, un icono de estrellas de 4 puntas (`Sparkles` o robot `Bot`) y el texto "IA".
+  * **Preconfiguración:** Mostrar una píldora azul/cyan con el icono de un rompecabezas/puzzle (`Puzzle`) y el nombre de la plantilla.
+
 ---
 
 # Agent Context & System Router (CRM Control Panel)
