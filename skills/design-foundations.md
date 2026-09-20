@@ -7,8 +7,18 @@ date: 2026-08-13
 
 # Cimientos del Sistema de Diseño (Design Foundations)
 
-## 1. Escala Tipográfica (Typography Scale)
-Utiliza una escala modular para una jerarquía consistente. Cada paso en la escala debe sentirse intencional.
+## 1. Escala Tipográfica y Color (Typography Scale & Color)
+- **Tamaños de Fuente:** Utilizar únicamente **5 tamaños de fuentes** en todo el proyecto. Cada tamaño debe estar separado por un factor de **1.25** respecto al anterior, creando una escala modular estricta (ej: 13px, 16px, 20px, 25px, 31px/32px).
+- **Colores de Tinta:** Usar solamente **3 tintas**, respetando siempre lo que indique el archivo `DESIGN.md` del proyecto activo:
+  - **Primaria:** Para textos principales y alta legibilidad (ej. `#181818`).
+  - **Secundaria:** Un poco más clara para jerarquía secundaria (ej. `#52525B`).
+  - **Suave:** Para textos de apoyo, placeholders o metadatos (ej. `#A1A1A1`).
+- **Pesos de Fuente (Font Weights):** Utilizar solamente **2 pesos**:
+  - `400` (Regular): Para lectura de párrafos y textos largos.
+  - `600` (Semi-bold o Bold): Para títulos, etiquetas y escaneo rápido del usuario.
+- **Interlineado (Leading/Line-height):** Utilizar un leading *inversamente proporcional* al tamaño de la tipografía para asegurar la coherencia:
+  - **Tamaños grandes (ej. 25px - 32px):** Usar un leading ajustado de **1.10** o **1.20** (ej. `leading-tight`).
+  - **Tamaños pequeños/lectura (ej. 13px - 16px):** Usar un leading amplio de **1.50** (ej. `leading-normal` o `leading-relaxed`) para mejor legibilidad.
 
 ## 2. Espaciado y Rejilla (Spacing & Grid)
 - **Ritmo de Espaciado:** Se utiliza una unidad base de `4px` para crear ritmo vertical y horizontal. Todos los márgenes, rellenos (paddings) y separaciones (gaps) deben ser múltiplos de 4 (ej: 4, 8, 12, 16, 24, 32, 48px).
