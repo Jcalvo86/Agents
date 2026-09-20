@@ -29,6 +29,10 @@ It focuses purely on layout architecture, spatial constraints, and density optim
 * **STRICT RULE 2 (Anti-Nesting):** **NEVER** nest "cards inside cards" (e.g. a bordered container with padding inside another bordered container). Let the main content flow directly on the canvas or within a single, unified main container to maximize screen real estate.
 * **STRICT RULE 3 (Vertical Space):** Helper text or long descriptive paragraphs at the top of pages **MUST** be placed inside Tooltips (using an `Info` icon) rather than rendering permanently on screen.
 
+### 2.3. Viewport & Padding Constraints (Screen Real Estate)
+* **Maximum Width:** **NEVER** restrict the main canvas with maximum width limits (e.g., avoid `max-w-7xl` or `max-w-[1600px]`). Dashboards and Control Panels **MUST** span 100% of the available width (`w-full`) to maximize horizontal workspace.
+* **Minimal Margins & Padding:** Use the smallest possible padding to separate content from screen edges (e.g., `px-4 py-4` or `p-4`). **NEVER** use large, restrictive paddings/margins (like `px-12`, `py-8`, or `mx-auto`) that waste valuable workspace, regardless of the screen size.
+
 ---
 
 ## 3. Form Layout & Grid Patterns
