@@ -25,7 +25,9 @@ It focuses purely on layout architecture, spatial constraints, and density optim
 ### 2.2. Border Radius Limits
 * **Cards & Containers:** `8px` to `12px` (Tailwind classes: `rounded-lg` or `rounded-xl`).
 * **Inputs, Selects & Buttons:** `6px` to `8px` (Tailwind classes: `rounded-md`).
-* **STRICT RULE:** **NEVER** use a border radius greater than `10px` (`rounded-xl` / `rounded-2xl`) on inputs, form controls, or compact buttons.
+* **STRICT RULE 1:** **NEVER** use a border radius greater than `10px` (`rounded-xl` / `rounded-2xl`) on inputs, form controls, or compact buttons.
+* **STRICT RULE 2 (Anti-Nesting):** **NEVER** nest "cards inside cards" (e.g. a bordered container with padding inside another bordered container). Let the main content flow directly on the canvas or within a single, unified main container to maximize screen real estate.
+* **STRICT RULE 3 (Vertical Space):** Helper text or long descriptive paragraphs at the top of pages **MUST** be placed inside Tooltips (using an `Info` icon) rather than rendering permanently on screen.
 
 ---
 
@@ -92,7 +94,7 @@ When an input requires an immediate action (e.g., Add Tag, Search, Filter), the 
 
 ### 5.2. Page Shell Structure
 Every control panel page should respect the following grid layout structure:
-1. **Sidebar Area:** Left column containing navigation, settings, and profile shortcuts.
+1. **Sidebar Area:** Left column containing navigation, settings, and profile shortcuts. **MUST** be implemented as a clean, borderless list (not separate cards) and **MUST** include a collapse toggle to allow the main content to take 100% of the screen width.
 2. **Top Bar:** Header area for breadcrumbs and global page actions.
 3. **KPI Grid:** Top metrics container across 1, 2, or 4 columns.
-4. **Main Content Area:** Central container for filter toolbars, data tables, and multi-column forms.
+4. **Main Content Area:** Central container for filter toolbars, data tables, and multi-column forms. Content should flow borderless if the sidebar is present to avoid double-boxing.
