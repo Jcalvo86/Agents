@@ -40,3 +40,17 @@ Estas reglas describen las decisiones de UI/UX estándar que deben aplicarse a t
 
 - **Píldoras de Ubicación/Metadatos:**
   La visualización de registros dinámicos y agrupados en la tabla principal debe utilizar píldoras compactas (`chip`) con formato jerárquico que destaquen primero el contenedor principal en negrita y a continuación los sub-elementos entre paréntesis (ej: **Egipto** (El Cairo, Luxor)).
+
+## 5. Creación de Entidades Complejas (Wizards)
+
+- **Patrón de Wizard (Paso a Paso):**
+  Para la primera vez que se crea una entidad compleja o densa en información (como un ICP, Producto o Campaña), se recomienda dividir el formulario en un flujo "Wizard" por pasos lógicos (ej: 1. Datos Generales -> 2. Psicografía / Dolores -> 3. Relaciones / Productos).
+  - Reduce la carga cognitiva inicial del usuario.
+  - Permite guardar borradores o auto-guardar entre pasos.
+  - Para la *edición posterior*, se puede optar por una vista unificada (todas las secciones visibles) o mantener la navegación por pestañas (tabs).
+
+- **Tono Conversacional e Íntimo:**
+  Los formularios dentro del Wizard deben sentirse personales y guiados. En lugar de usar etiquetas secas de bases de datos (ej. "Nombre del Arquetipo", "Rol"), utiliza preguntas directas y conversacionales (ej. "¿Cuál es su nombre?", "¿Qué rol o puesto ocupa?"). Esto facilita la inmersión del usuario al definir entidades abstractas.
+
+- **Navegación y Stepper Superior:**
+  El indicador visual de progreso (Stepper) en la parte superior debe contar con tooltips interactivos. Al pasar el cursor sobre los números o indicadores de pasos, el usuario debe poder leer el nombre de la sección actual y previsualizar qué secciones (pasos) vienen a continuación, mejorando la orientación espacial dentro del formulario.
